@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/myhiber</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">Suraj@7462</property>
+
+		<!-- Any change occurs -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!-- It create table automatically -->
+
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- it execute query automatically -->
+
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<!-- <property name="cache.use_second_level_cache">true</property> -->
+		<!-- <property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property> -->
+		<!-- Set Mapping of Class where table creation properties is there -->
+		<mapping class="com.tut.Student" />
+		<mapping class="com.tut.Address" />
+		<!-- <mapping class="com.map.Question" />
+		<mapping class="com.map.Answer" /> -->
+		<mapping class="com.OneToMany.Question" />
+		<mapping class="com.OneToMany.Answer" />
+		
+		<!-- <mapping class="com.ManyToMany.Emp" />
+		<mapping class="com.ManyToMany.Project" /> -->
+		
+		<!-- <mapping class="com.lazy.eager.Question" />
+		<mapping class="com.lazy.eager.Answer" />
+ -->
+   <mapping resource="com/mapping/xml/Person.hbm.xml"/>
+	</session-factory>
+
+</hibernate-configuration>
